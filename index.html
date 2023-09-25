@@ -10,7 +10,35 @@
 </head>
 
 <body>
+  <div class="header">
+    <h1>Etch a Sketch</h1>
+  </div>
+  <div class="main">
+    <div class="tool-bar">
 
+      <div class="color-pen-container">
+        <input type="color" name="color" id="color-picker">
+        <div class="color-pen">
+          <img src="images/pointer.svg" alt="mouse pointer">
+        </div>
+      </div>
+
+      <div class="rainbow-pen"><img src="./images/rainbow-icon.svg" alt="rainbow pen"></div>
+      <div class="darker-pen"><img src="./images/pointer.svg" alt="A darkening pen"></div>
+      <div class="eraser"><img src="./images/eraser.svg" alt="Eraser"></div>
+    </div>
+    <div class="grid-section">
+      <div class="grid-container"></div>
+      <div class="grid-bar">
+        <div class="form">
+          <input type="text" name="size" id="size">
+          <input type="button" value="Enter">
+        </div>
+        <div class="display-size">16x16</div>
+        <button class="reset-btn">Reset</button>
+      </div>
+    </div>
+  </div>
 </body>
 
 </html>
