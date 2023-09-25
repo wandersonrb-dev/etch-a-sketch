@@ -151,4 +151,10 @@ input[type='number'] {
 
 .footer {
   margin-bottom: 30px;
+  color: #f2f2f2;
+  text-align: center;
+}
+
+.footer a {
+  color: #1468C9;
 }
