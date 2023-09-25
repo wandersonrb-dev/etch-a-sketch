@@ -12,9 +12,11 @@ html {
 }
 
 body {
-  width: 1440px;
+  width: 1024px;
   height: 100vh;
   margin: 0 auto;
+  display: flex;
+  flex-direction: column;
 }
 
 .header {
@@ -26,4 +28,34 @@ body {
   font-size: 48px;
   text-align: center;
   color: #F2F2F2;
+}
+
+.main {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-bottom: 40px;
+}
+
+.grid-section {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  max-width: 960px;
+  flex: 1;
+}
+
+.grid-container {
+  flex:1;
+}
+
+.tool-bar {
+flex: 0 0 110px
+}
+
+.tool-bar,
+.grid-bar,
+.grid-container {
+  background-color: #f2f2f2;
 }
