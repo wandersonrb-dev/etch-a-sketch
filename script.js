@@ -35,10 +35,17 @@ function createCell() {
 function updateGridSize(event) {
     deleteGrid();
     const gridContainer = document.querySelector('.grid-container');
-    gridContainer.appendChild(createGrid(event.target.value));
+    const newGridSize = event.target.value;
+    gridContainer.appendChild(createGrid(newGridSize));
+    updateGridDisplaySize(newGridSize);
 }
 
 function deleteGrid() {
     const gridContainer = document.querySelector('.grid-container');
     gridContainer.removeChild(gridContainer.firstChild);
+}
+
+function updateGridDisplaySize(newGridSize) {
+    const sizeDisplay = document.querySelector('.grid-display-size');
+    sizeDisplay.textContent = `${newGridSize}x${newGridSize}`
 }
