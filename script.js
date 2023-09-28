@@ -1,5 +1,9 @@
+const DEFAULT_GRID_SIZE = 16;
 const gridContainer = document.querySelector('.grid-container');
-gridContainer.appendChild(createGrid(16));
+gridContainer.appendChild(createGrid(DEFAULT_GRID_SIZE));
+
+const rangeInput = document.querySelector('#grid-size');
+rangeInput.addEventListener('input', updateGridSize);
 
 
 function createGrid(rows) {
@@ -26,4 +30,15 @@ function createCell() {
     const cell = document.createElement('div');
     cell.classList.add('cell');
     return cell;
+}
+
+function updateGridSize(event) {
+    deleteGrid();
+    const gridContainer = document.querySelector('.grid-container');
+    gridContainer.appendChild(createGrid(event.target.value));
+}
+
+function deleteGrid() {
+    const gridContainer = document.querySelector('.grid-container');
+    gridContainer.removeChild(gridContainer.firstChild);
 }
