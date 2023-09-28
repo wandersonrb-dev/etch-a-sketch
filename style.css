@@ -114,7 +114,8 @@ flex: 0 0 110px
   width: 200px;
 }
 
-.range-constraint {
+.min-size,
+.max-size{
   color: #666;
   font-size: 12;
 }
