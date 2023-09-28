@@ -103,15 +103,19 @@ flex: 0 0 110px
   align-items: center;
 }
 
-input[type='number'] {
-  background-color: #fff;
-  color: #7F7F7F;
-  padding: 8px;
-  text-align: center;
-  font-weight: bold;
-  border: 1px solid #333;
-  border-radius: 4px;
-  box-shadow: 0px 1px 0px 1px rgba(33, 33, 33, .3);
+.form {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+#grid-size {
+  width: 200px;
+}
+
+.range-constraint {
+  color: #666;
+  font-size: 12;
 }
 
 .grid-container {
