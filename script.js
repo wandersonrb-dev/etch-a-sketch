@@ -1,9 +1,13 @@
 const DEFAULT_GRID_SIZE = 16;
+const DEFAULT_BC_COLOR = '#f2f2f2';
 const gridContainer = document.querySelector('.grid-container');
 gridContainer.appendChild(createGrid(DEFAULT_GRID_SIZE));
 
 const rangeInput = document.querySelector('#grid-size');
 rangeInput.addEventListener('input', updateGridSize);
+
+const clearGridButton = document.querySelector('.clear-btn');
+clearGridButton.addEventListener('click', clearGrid)
 
 
 function createGrid(rows) {
@@ -48,4 +52,9 @@ function deleteGrid() {
 function updateGridDisplaySize(newGridSize) {
     const sizeDisplay = document.querySelector('.grid-display-size');
     sizeDisplay.textContent = `${newGridSize}x${newGridSize}`
+}
+
+function clearGrid(event) {
+    const cells = document.querySelectorAll('.cell');
+    cells.forEach(cell => cell.style.backgroundColor = DEFAULT_BC_COLOR);
 }
