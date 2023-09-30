@@ -8,9 +8,14 @@ rangeInput.addEventListener('input', updateGridSize);
 
 const clearGridButton = document.querySelector('.clear-btn');
 clearGridButton.addEventListener('click', clearGrid)
+
+const pens = document.querySelectorAll('div.pen');
+pens.forEach(pen => pen.addEventListener('click', (e) => {
+    removeButtonsSelection();
+    showSelectedButton(e.target)
+}));
+
 draw();
-
-
 
 function createGrid(rows) {
     const grid = document.createElement('div');
@@ -81,4 +86,13 @@ function draw() {
     cells.forEach(cell => cell.addEventListener('mousedown', paintCell));
     cells.forEach(cell => cell.addEventListener('mousedown', startPaintCell));
     cells.forEach(cell => cell.addEventListener('mouseup', stopPaintCell));
+}
+
+function showSelectedButton(button) {
+    button.classList.add('selected');
+}
+
+function removeButtonsSelection() {
+    const pens = document.querySelectorAll('.pen');
+    pens.forEach(pen => pen.classList.remove('selected'));
 }
