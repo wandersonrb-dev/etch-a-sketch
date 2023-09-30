@@ -8,6 +8,8 @@ rangeInput.addEventListener('input', updateGridSize);
 
 const clearGridButton = document.querySelector('.clear-btn');
 clearGridButton.addEventListener('click', clearGrid)
+draw();
+
 
 
 function createGrid(rows) {
@@ -42,6 +44,7 @@ function updateGridSize(event) {
     const newGridSize = event.target.value;
     gridContainer.appendChild(createGrid(newGridSize));
     updateGridDisplaySize(newGridSize);
+    draw();
 }
 
 function deleteGrid() {
@@ -57,4 +60,25 @@ function updateGridDisplaySize(newGridSize) {
 function clearGrid(event) {
     const cells = document.querySelectorAll('.cell');
     cells.forEach(cell => cell.style.backgroundColor = DEFAULT_BC_COLOR);
+}
+
+function startPaintCell() {
+    const cells = document.querySelectorAll('.cell');
+    cells.forEach(cell => cell.addEventListener('mouseover', paintCell));
+}
+
+function stopPaintCell() {
+    const cells = document.querySelectorAll('.cell');
+    cells.forEach(cell => cell.removeEventListener('mouseover', paintCell));
+}
+
+function paintCell(event) {
+    event.target.style.backgroundColor = 'red';
+}
+
+function draw() {
+    const cells = document.querySelectorAll('.cell');
+    cells.forEach(cell => cell.addEventListener('mousedown', paintCell));
+    cells.forEach(cell => cell.addEventListener('mousedown', startPaintCell));
+    cells.forEach(cell => cell.addEventListener('mouseup', stopPaintCell));
 }
