@@ -179,6 +179,10 @@ flex: 0 0 110px
   text-align: center;
 }
 
+.noselection {
+  user-select: none;
+}
+
 
 .footer {
   margin-bottom: 30px;
