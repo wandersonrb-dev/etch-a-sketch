@@ -78,7 +78,13 @@ function stopPaintCell() {
 }
 
 function paintCell(event) {
-    event.target.style.backgroundColor = 'red';
+    const selectedButton = document.querySelector('.selected');
+    let color = '#000';
+    switch(selectedButton.id) {
+        case 'color-pen':
+            color = document.querySelector('#color-picker').value;
+    }
+    event.target.style.backgroundColor = color;
 }
 
 function draw() {
