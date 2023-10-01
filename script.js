@@ -79,10 +79,16 @@ function stopPaintCell() {
 
 function paintCell(event) {
     const selectedButton = document.querySelector('.selected');
-    let color = '#000';
+    let color = null;
     switch(selectedButton.id) {
         case 'color-pen':
             color = document.querySelector('#color-picker').value;
+            break
+        case 'rainbow-pen': 
+            color = randomColor();
+            break
+        default:
+            color = '#000'
     }
     event.target.style.backgroundColor = color;
 }
@@ -101,4 +107,12 @@ function showSelectedButton(button) {
 function removeButtonsSelection() {
     const pens = document.querySelectorAll('.pen');
     pens.forEach(pen => pen.classList.remove('selected'));
+}
+
+function randomNumber(upperBound) {
+    return Math.floor(Math.random() * upperBound);
+}
+
+function randomColor() {
+    return `rgb(${randomNumber(256)}, ${randomNumber(256)}, ${randomNumber(256)})`;
 }
