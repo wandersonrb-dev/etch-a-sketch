@@ -87,6 +87,9 @@ function paintCell(event) {
         case 'rainbow-pen': 
             color = randomColor();
             break
+        case 'eraser':
+            color = DEFAULT_BC_COLOR;
+            break
         default:
             color = '#000'
     }
